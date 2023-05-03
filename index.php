@@ -1,12 +1,19 @@
 <?php
 
-//Variable variables
+// Data types and type casting
 
-$foo = 'bar';
+  // 4 Scalar Types
+    // bool
+    // int
+    // float
+    // string
 
-$$foo = 'baz';
+  // 4 compound types
+    // array
+    // object
+    // callable
+    // iterable
 
-echo $foo, $bar; // also $$foo works too
-
-// echo "{$$foo}"; use braces if in quotes
-// echo "${$foo}"; or like this
+  // 2 special types
+    // resource
+    // null
