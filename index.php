@@ -1,57 +1,53 @@
 <?php
 
-// Data types and type casting
+// Booleans
 
-  // 4 Scalar Types
-    // bool
-    $completed = true;
-    // int
-    $count = 75;
-    // float also double
-    $price = 1.75;
-    // string
-    $greeting = 'Hello, John';
+$isComplete = true; // case insensitive
 
-    echo $completed . '<br />';
-    echo $count . '<br />';
-    echo $price . '<br />';
-    echo $greeting . '<br />';
-
-    echo gettype($completed) . '<br />';
-    echo gettype($count) . '<br />';
-    echo gettype($price) . '<br />';
-    echo gettype($greeting) . '<br />';
-
-    echo var_dump($completed) . '<br />';
-    echo var_dump($count) . '<br />';
-    echo var_dump($price) . '<br />';
-    echo var_dump($greeting) . '<br />';
-
-  // 4 compound types
-    // array
-    $companies = [1, 2, .05, -1.75, 'Walmart', true, false];
-    print_r($companies);
-    echo '<br />';
-    // object
-    // callable
-    // iterable
-
-  // 2 special types
-    // resource
-    // null
-
-function sum($x, $y) {
-  var_dump($x, $y);
-  return $x + $y;
+if ($isComplete) {
+  // do something
+} else {
+  // do something else
 }
 
-echo sum(2, 3) . '<br />';
+// The following all evaluate to false:
+  // int 0 or -0
+  // float 0.0 or -0.0
+  // string ''
+  // string '0'
+  // array []
+  // null
 
-// type coercion - changes types to match context
-$sum = sum(2, '3');
-var_dump($sum);
-echo $sum . '<br />';
+function test($input) {
+  if ($input) {
+    echo 'success' . '<br />';
+  } else {
+    echo 'fail' . '<br />';
+  }
+}
 
-// type casting
-$value = (int) '5';
-var_dump($value);
+test($isComplete);
+test(!$isComplete);
+test(0);
+test(5);
+test([]);
+
+echo $isComplete . '<br />';
+var_dump($isComplete);
+echo '<br />';
+
+$isComplete = false;
+
+echo $isComplete . '<br />';
+var_dump($isComplete);
+echo '<br />';
+
+var_dump(is_bool($isComplete));
+
+$isComplete = (string) false;
+
+echo $isComplete . '<br />';
+var_dump($isComplete);
+echo '<br />';
+
+var_dump(is_bool($isComplete));
