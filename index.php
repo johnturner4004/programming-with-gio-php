@@ -1,53 +1,56 @@
 <?php
 
-// Booleans
+// Integers
 
-$isComplete = true; // case insensitive
+echo __LINE__ . '. ' . PHP_INT_MAX . '<br />';
+echo __LINE__ . '. ' . PHP_INT_MIN . '<br />';
 
-if ($isComplete) {
-  // do something
-} else {
-  // do something else
-}
+// decimal
+$x = 42;
 
-// The following all evaluate to false:
-  // int 0 or -0
-  // float 0.0 or -0.0
-  // string ''
-  // string '0'
-  // array []
-  // null
+echo __LINE__ . '. ' . $x . '<br />';
 
-function test($input) {
-  if ($input) {
-    echo 'success' . '<br />';
-  } else {
-    echo 'fail' . '<br />';
-  }
-}
+// hexadecimal
+$x = 0x2A;
 
-test($isComplete);
-test(!$isComplete);
-test(0);
-test(5);
-test([]);
+echo __LINE__ . '. ' . $x . '<br />';
 
-echo $isComplete . '<br />';
-var_dump($isComplete);
-echo '<br />';
+// octal
+$x = 052;
 
-$isComplete = false;
+echo __LINE__ . '. ' . $x . '<br />';
 
-echo $isComplete . '<br />';
-var_dump($isComplete);
-echo '<br />';
+// binary
+$x = 0b101010;
 
-var_dump(is_bool($isComplete));
+echo __LINE__ . '. ' . $x . '<br />';
 
-$isComplete = (string) false;
+// casting
+$x = (int) 42;
+$x = (integer) 42;
 
-echo $isComplete . '<br />';
-var_dump($isComplete);
-echo '<br />';
+$x = (int) 42.9;
 
-var_dump(is_bool($isComplete));
+echo __LINE__ . '. ' . $x . '<br />';
+
+$x = (int) '42.9';
+
+echo __LINE__ . '. ' . $x . '<br />';
+
+$x = (int) '42DDAFFA';
+
+echo __LINE__ . '. ' . $x . '<br />';
+
+$x = (int) 'forty-two';
+
+echo __LINE__ . '. ' . $x . '<br />';
+
+$x = (int) null;
+
+echo __LINE__ . '. ' . $x . '<br />';
+
+echo __LINE__ . '. ' . var_dump(is_int($x)) . '<br />';
+
+$x = 42_000;
+
+echo __LINE__ . '. ' . $x . '<br />';
